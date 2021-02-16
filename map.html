@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8f7e37379b8346aca2f7eb099bd7ca6b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_8f7e37379b8346aca2f7eb099bd7ca6b" ></div>
+        
+</body>
+<script>    
+    
+            var map_8f7e37379b8346aca2f7eb099bd7ca6b = L.map(
+                "map_8f7e37379b8346aca2f7eb099bd7ca6b",
+                {
+                    center: [49.83826, 24.02324],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_335c01a9ca3d43238087702473b6964c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8f7e37379b8346aca2f7eb099bd7ca6b);
+        
+    
+            var marker_cluster_95fbf80c41c94ca38d03166c16df555a = L.markerClusterGroup(
+                {}
+            );
+            map_8f7e37379b8346aca2f7eb099bd7ca6b.addLayer(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var marker_138edb15c90141adb43849b2d7e6d8e4 = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_474fa71614c0476e8dab721c2e8bb7cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_138edb15c90141adb43849b2d7e6d8e4.setIcon(icon_474fa71614c0476e8dab721c2e8bb7cc);
+        
+    
+        var popup_b4d0c3a1f0ca49e99dbe9cc61fb431e5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_099af8cc482d4e3cb9886e56930ad0d0 = $(`<div id="html_099af8cc482d4e3cb9886e56930ad0d0" style="width: 100.0%; height: 100.0%;">{'ActorsLife ', 'LoveMyRoomie '}</div>`)[0];
+            popup_b4d0c3a1f0ca49e99dbe9cc61fb431e5.setContent(html_099af8cc482d4e3cb9886e56930ad0d0);
+        
+
+        marker_138edb15c90141adb43849b2d7e6d8e4.bindPopup(popup_b4d0c3a1f0ca49e99dbe9cc61fb431e5)
+        ;
+
+        
+    
+    
+            var marker_405694dbfb5c48f0954739ef8929d834 = L.marker(
+                [40.6501038, -73.9495823],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_b0b8649b1e2a46969743570d1def807e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_405694dbfb5c48f0954739ef8929d834.setIcon(icon_b0b8649b1e2a46969743570d1def807e);
+        
+    
+        var popup_ecceeb44cfb943858a9cdd72b3ff5ac8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3fab882d43704db3a3510dc03a9236ac = $(`<div id="html_3fab882d43704db3a3510dc03a9236ac" style="width: 100.0%; height: 100.0%;">{'LoveMyRoomie '}</div>`)[0];
+            popup_ecceeb44cfb943858a9cdd72b3ff5ac8.setContent(html_3fab882d43704db3a3510dc03a9236ac);
+        
+
+        marker_405694dbfb5c48f0954739ef8929d834.bindPopup(popup_ecceeb44cfb943858a9cdd72b3ff5ac8)
+        ;
+
+        
+    
+    
+            var marker_73bc4ee90473405593e6d031e3216595 = L.marker(
+                [49.8681162, -121.4432499],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_d470ca06e31248e6b42417734e9356b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_73bc4ee90473405593e6d031e3216595.setIcon(icon_d470ca06e31248e6b42417734e9356b7);
+        
+    
+        var popup_5307a159120f42b389833e5b88547d3e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_581ab33d18e9428b89e32575180459dc = $(`<div id="html_581ab33d18e9428b89e32575180459dc" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_5307a159120f42b389833e5b88547d3e.setContent(html_581ab33d18e9428b89e32575180459dc);
+        
+
+        marker_73bc4ee90473405593e6d031e3216595.bindPopup(popup_5307a159120f42b389833e5b88547d3e)
+        ;
+
+        
+    
+    
+            var marker_ee8f58458d25416da84c3ceb1edd3f38 = L.marker(
+                [49.8879177, -119.4959025],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_1bb0d7c782b44fdf97ca37f5743b2ed4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ee8f58458d25416da84c3ceb1edd3f38.setIcon(icon_1bb0d7c782b44fdf97ca37f5743b2ed4);
+        
+    
+        var popup_3cd3f9fe2d7240fa82a3e0328d7e2c98 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_31f2f2bde8ea4e069e684f799507af54 = $(`<div id="html_31f2f2bde8ea4e069e684f799507af54" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_3cd3f9fe2d7240fa82a3e0328d7e2c98.setContent(html_31f2f2bde8ea4e069e684f799507af54);
+        
+
+        marker_ee8f58458d25416da84c3ceb1edd3f38.bindPopup(popup_3cd3f9fe2d7240fa82a3e0328d7e2c98)
+        ;
+
+        
+    
+    
+            var marker_5cb6c75dccf9408686e2986ad49c3dc6 = L.marker(
+                [35.2272086, -80.8430827],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_828192b52991446f879c95af349f7509 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5cb6c75dccf9408686e2986ad49c3dc6.setIcon(icon_828192b52991446f879c95af349f7509);
+        
+    
+        var popup_425128b995d543dc9591ad809ebdbabc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f3243d1555374072b97873870fddf160 = $(`<div id="html_f3243d1555374072b97873870fddf160" style="width: 100.0%; height: 100.0%;">{'SmurTv '}</div>`)[0];
+            popup_425128b995d543dc9591ad809ebdbabc.setContent(html_f3243d1555374072b97873870fddf160);
+        
+
+        marker_5cb6c75dccf9408686e2986ad49c3dc6.bindPopup(popup_425128b995d543dc9591ad809ebdbabc)
+        ;
+
+        
+    
+    
+            var marker_0e6b5b582f764ac3a7740d792b9519f5 = L.marker(
+                [55.001251, -115.002136],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_cbcfedf566554b53939f929e7b894588 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0e6b5b582f764ac3a7740d792b9519f5.setIcon(icon_cbcfedf566554b53939f929e7b894588);
+        
+    
+        var popup_0a06c53d9d9d49509ac0dda8b92c7c9a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c0911d2a64404b8c84b09167f6559925 = $(`<div id="html_c0911d2a64404b8c84b09167f6559925" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_0a06c53d9d9d49509ac0dda8b92c7c9a.setContent(html_c0911d2a64404b8c84b09167f6559925);
+        
+
+        marker_0e6b5b582f764ac3a7740d792b9519f5.bindPopup(popup_0a06c53d9d9d49509ac0dda8b92c7c9a)
+        ;
+
+        
+    
+    
+            var marker_b02b0c11b8834094893e4286b19a50b6 = L.marker(
+                [55.001251, -125.002441],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_8ac4cdb146224ae091ac3aa3b29fd5a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b02b0c11b8834094893e4286b19a50b6.setIcon(icon_8ac4cdb146224ae091ac3aa3b29fd5a9);
+        
+    
+        var popup_4e32f621bc4c4f92bbaf30635afb5fc2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f06d20339207410d9874455c6a7a5401 = $(`<div id="html_f06d20339207410d9874455c6a7a5401" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_4e32f621bc4c4f92bbaf30635afb5fc2.setContent(html_f06d20339207410d9874455c6a7a5401);
+        
+
+        marker_b02b0c11b8834094893e4286b19a50b6.bindPopup(popup_4e32f621bc4c4f92bbaf30635afb5fc2)
+        ;
+
+        
+    
+    
+            var marker_7c92d04dd31d4946b69cc19c40327cad = L.marker(
+                [51.0534234, -114.0625892],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_510e372d83b148539f0de8d021690b4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7c92d04dd31d4946b69cc19c40327cad.setIcon(icon_510e372d83b148539f0de8d021690b4e);
+        
+    
+        var popup_ab22c978a1524dbca00651ad2f20fc9d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c30ecb0e84414f6baa71cb1f886319e3 = $(`<div id="html_c30ecb0e84414f6baa71cb1f886319e3" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_ab22c978a1524dbca00651ad2f20fc9d.setContent(html_c30ecb0e84414f6baa71cb1f886319e3);
+        
+
+        marker_7c92d04dd31d4946b69cc19c40327cad.bindPopup(popup_ab22c978a1524dbca00651ad2f20fc9d)
+        ;
+
+        
+    
+    
+            var marker_7e886462081e4cf68985406dfde133fe = L.marker(
+                [34.1816482, -118.3258554],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_56b02c437a344253b97dd666cdfd8c25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7e886462081e4cf68985406dfde133fe.setIcon(icon_56b02c437a344253b97dd666cdfd8c25);
+        
+    
+        var popup_086aa871ad414646b7f4b251845ff584 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5bf60a03a04d491695c4e43d80e81ff5 = $(`<div id="html_5bf60a03a04d491695c4e43d80e81ff5" style="width: 100.0%; height: 100.0%;">{'KillTorrey '}</div>`)[0];
+            popup_086aa871ad414646b7f4b251845ff584.setContent(html_5bf60a03a04d491695c4e43d80e81ff5);
+        
+
+        marker_7e886462081e4cf68985406dfde133fe.bindPopup(popup_086aa871ad414646b7f4b251845ff584)
+        ;
+
+        
+    
+    
+            var marker_f39d1b821c89460b93ae2a2a07db32eb = L.marker(
+                [36.7014631, -118.755997],
+                {}
+            ).addTo(marker_cluster_95fbf80c41c94ca38d03166c16df555a);
+        
+    
+            var icon_dcf71521830f4f45bd61f359b2216467 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f39d1b821c89460b93ae2a2a07db32eb.setIcon(icon_dcf71521830f4f45bd61f359b2216467);
+        
+    
+        var popup_2e796d34fc0043d08c71c81a3cfce43f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b8385fd2e8fc41c3a19438348db365c5 = $(`<div id="html_b8385fd2e8fc41c3a19438348db365c5" style="width: 100.0%; height: 100.0%;">{'VanLifeAttila '}</div>`)[0];
+            popup_2e796d34fc0043d08c71c81a3cfce43f.setContent(html_b8385fd2e8fc41c3a19438348db365c5);
+        
+
+        marker_f39d1b821c89460b93ae2a2a07db32eb.bindPopup(popup_2e796d34fc0043d08c71c81a3cfce43f)
+        ;
+
+        
+    
+</script>
