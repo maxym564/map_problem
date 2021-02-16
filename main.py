@@ -106,7 +106,7 @@ def create_map(info:dict,coordinates:list):
     '''
     map = folium.Map(location= coordinates,zoom_start=10)
     # fg = folium.FeatureGroup(name="Movies map")
-    
+
     mark_cluster = MarkerCluster(name='movie locations').add_to(map)
     for key in info:
         folium.Marker(location=key,
@@ -127,10 +127,10 @@ def main_func():
     create_map(new_info,[latitude,longitude])
     print('Finished')
 
-main_func()
+# main_func()
 
-# if __name__ == '__main__':
-#     line = read_list('prob_lst',2016,(49.83826,24.02324 ))
-#     info = get_10_points(line)
-#     print(info)
-#     create_map(info,[49.83826,24.02324])
+if __name__ == '__main__':
+    line = read_list('prob_lst',2016,(49.83826,24.02324 ))
+    info = get_10_points(line)
+    print(info)
+    create_map(info,[49.83826,24.02324])
