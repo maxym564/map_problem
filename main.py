@@ -6,6 +6,9 @@ from folium.plugins import MarkerCluster
 
 def read_list(path,year,coordinates):
     '''
+    reads the file and returns the data in the form of a dictionary,
+    where the keys are a tuple with coordinates and distance, and the
+    value of the movie name
     '''
     apr_loc_and_movies = {}
     with open(path,encoding='ISO-8859-1') as movie_info:
@@ -32,7 +35,7 @@ def read_list(path,year,coordinates):
 
 def take_year_name(line):
     '''
-    return the year and name of movie from str
+    return the tuple of year and name of movie from string
     '''
     try:
         name_year = line[0]
@@ -52,6 +55,7 @@ def take_year_name(line):
 
 def define_correct_adress(line):
     '''
+    determines the movie address in the string
     '''
     try:
         index = -1
@@ -63,6 +67,7 @@ def define_correct_adress(line):
 
 def cool_name(name:str):
     '''
+    removes extra characters from the movie title
     '''
     bad_elem = ['#','"']
     for elem in bad_elem:
@@ -71,6 +76,8 @@ def cool_name(name:str):
 
 def distance_between_dots(lon_1,lon_2,lat_1,lat_2):
     '''
+    determines the distance between two points on
+    the globe using their latitude and longitude
     '''
     fs_dod = (math.sin((lat_2 - lat_1)/2))**2
     sec_dod = (math.sin((lon_2 - lon_1)/2))**2
@@ -82,6 +89,7 @@ def distance_between_dots(lon_1,lon_2,lat_1,lat_2):
 
 def define_cordinates(adress):
     '''
+    determines the coordinates of a particular location
     '''
     try:
         geolocator = Nominatim(user_agent='Maxym')
@@ -95,6 +103,7 @@ def define_cordinates(adress):
 
 def get_10_points(all_cor:dict):
     '''
+    selects at least the 10 closest coordinates from the dictionary
     '''
     lst = list(all_cor.keys())
     lst = sorted(lst,key=lambda info:info[1])
@@ -103,10 +112,12 @@ def get_10_points(all_cor:dict):
 
 def create_map(info:dict,coordinates:list):
     '''
+    creates a folder with movie tags as an htlm file
     '''
     map = folium.Map(location= coordinates,zoom_start=10)
-    # fg = folium.FeatureGroup(name="Movies map")
 
+    folium.Marker(location= list(coordinates),popup="your place",
+                   icon=folium.Icon(color='blue')).add_to(map)
     mark_cluster = MarkerCluster(name='movie locations').add_to(map)
     for key in info:
         folium.Marker(location=key,
@@ -116,7 +127,8 @@ def create_map(info:dict,coordinates:list):
 
 def main_func():
     '''
-
+    main function that responce for the final process
+    the dataset must be in the correct directory
     '''
     year = int(input('Enter your year: '))
     latitude = float(input('Enter your latitude: '))
@@ -124,13 +136,13 @@ def main_func():
     print('Please,wait...')
     info = read_list('prob_lst',year,(latitude,longitude))
     new_info = get_10_points(info)
-    create_map(new_info,[latitude,longitude])
+    create_map(new_info,[latitude,longitude],)
     print('Finished')
 
-# main_func()
+main_func()
 
-if __name__ == '__main__':
-    line = read_list('prob_lst',2016,(49.83826,24.02324 ))
-    info = get_10_points(line)
-    print(info)
-    create_map(info,[49.83826,24.02324])
+# if __name__ == '__main__':
+#     line = read_list('prob_lst',2016,(49.83826,24.02324 ))
+#     info = get_10_points(line)
+#     print(info)
+#     create_map(info,[49.83826,24.02324])
