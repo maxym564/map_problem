@@ -2,8 +2,11 @@ import math
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import folium
+from folium.plugins import MarkerCluster
 
 def read_list(path,year,coordinates):
+    '''
+    '''
     apr_loc_and_movies = {}
     with open(path,encoding='ISO-8859-1') as movie_info:
         for _ in range(14):
@@ -48,6 +51,8 @@ def take_year_name(line):
         return False
 
 def define_correct_adress(line):
+    '''
+    '''
     try:
         index = -1
         while ',' not in line[index]:
@@ -57,12 +62,16 @@ def define_correct_adress(line):
         return False
 
 def cool_name(name:str):
+    '''
+    '''
     bad_elem = ['#','"']
     for elem in bad_elem:
         name = name.replace(elem,'')
     return name
 
 def distance_between_dots(lon_1,lon_2,lat_1,lat_2):
+    '''
+    '''
     fs_dod = (math.sin((lat_2 - lat_1)/2))**2
     sec_dod = (math.sin((lon_2 - lon_1)/2))**2
     fst_ex = fs_dod + math.cos(lat_1)*math.cos(lat_2)*sec_dod
@@ -72,6 +81,8 @@ def distance_between_dots(lon_1,lon_2,lat_1,lat_2):
 
 
 def define_cordinates(adress):
+    '''
+    '''
     try:
         geolocator = Nominatim(user_agent='Maxym')
         geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -83,25 +94,43 @@ def define_cordinates(adress):
 
 
 def get_10_points(all_cor:dict):
+    '''
+    '''
     lst = list(all_cor.keys())
     lst = sorted(lst,key=lambda info:info[1])
     new_dict = {key[0]:set(all_cor[key]) for key in lst[:10]}
     return new_dict
 
 def create_map(info:dict,coordinates:list):
+    '''
+    '''
     map = folium.Map(location= coordinates,zoom_start=10)
-    fg = folium.FeatureGroup(name="Movies map")
+    # fg = folium.FeatureGroup(name="Movies map")
+    
+    mark_cluster = MarkerCluster(name='movie locations').add_to(map)
     for key in info:
-        fg.add_child(folium.Marker(location=key,
-                                    popup= str(info[key]),
-                                    icon=folium.Icon()))
-    map.add_child(fg)
+        folium.Marker(location=key,
+                      popup= str(info[key]),
+                      icon=folium.Icon(color='red')).add_to(mark_cluster)
     map.save('map.html')
 
+def main_func():
+    '''
 
+    '''
+    year = int(input('Enter your year: '))
+    latitude = float(input('Enter your latitude: '))
+    longitude = float(input('Enter your longitude: '))
+    print('Please,wait...')
+    info = read_list('prob_lst',year,(latitude,longitude))
+    new_info = get_10_points(info)
+    create_map(new_info,[latitude,longitude])
+    print('Finished')
 
-if __name__ == '__main__':
-    line = read_list('prob_lst',2012,(49.83826,24.02324 ))
-    info = get_10_points(line)
-    print(info)
-    create_map(info,[49.83826,24.02324])
+main_func()
+
+# if __name__ == '__main__':
+#     line = read_list('prob_lst',2016,(49.83826,24.02324 ))
+#     info = get_10_points(line)
+#     print(info)
+#     create_map(info,[49.83826,24.02324])
